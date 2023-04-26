@@ -35,14 +35,9 @@ typedef struct l_start
 int exit_point(t_game *data);
 int controls_working(int command, t_game *data);
 
-static int  keyboard_a_d(t_game *data, int movement);
-static int  keyboard_w_s(t_game *data, int movement);
-static int  right_move(t_game *data, int i, int j);
-
-static void *ftt_memset(void *s, int c, size_t n);
-
 void    err_msg(char *err);
 void    ber_control(char *map_name);
+void    wall_control(t_game *data);
 void    map_control(char *map_name, t_game *data);
 void    map_reading(t_game *data);
 void    tmp_control(char *map_name);

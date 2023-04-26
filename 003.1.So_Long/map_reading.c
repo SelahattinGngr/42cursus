@@ -1,5 +1,29 @@
 #include "so_long.h"
 
+void    wall_control(t_game *data)
+{
+    int i;
+    int j;
+    int width;
+    int height;
+
+    j = 0;
+    i = 0;
+    width = data->map_width - 1;
+    height = data->map_height - 1;
+    while(i <= height)
+    {
+        if (data->map[i][0] != '1' || data->map[i][width]  != '1')
+            err_msg("watafak amigo map duvarlarla kapli degil");
+        i++;
+    }
+    while (j <= width)
+    {
+        if (data->map[0][j] != '1' || data->map[height][j] != '1')
+            err_msg("watafak amigo map duvarlarla kapli degil");
+        j++;
+    }
+}
 // mapi dataya isler
 void    map_processing(t_game *data)
 {
@@ -29,6 +53,16 @@ void    map_processing(t_game *data)
     }
     close(fd);
 }
+
+static int	width_of_map(char *string)
+{
+    int	width;
+
+    width = 0;
+    while (string[width] != '\n' && string[width] != '\0')
+        width++;
+    return (width);
+}
 // mapin dikdortgen olup olmadıgını kontrol eder
 void    map_reading(t_game *data)
 {
@@ -40,7 +74,7 @@ void    map_reading(t_game *data)
     y = 0;
     fd = open(data->maplocation, O_RDONLY);
     line = get_next_line(fd);
-    x = (int)ft_strlen(line);
+    x = width_of_map(line);
     while (1)
     {
         free(line);
@@ -52,7 +86,7 @@ void    map_reading(t_game *data)
     if (line)
         free(line);
     data->map_height = y;
-    data->map_width = x - 1;
+    data->map_width = x;
     if (data->map_height == data->map_width)
         err_msg("watafak amigo map dikdortgen degil");
     close(fd);

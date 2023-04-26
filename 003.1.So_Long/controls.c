@@ -6,7 +6,7 @@ static int right_move(t_game *data, int i, int j)
 	{
 		if (data->collectables != 0)
 			return (0);
-		ft_printf("\nYou Have Won, Congrats!\n");
+		ft_printf("\nKAZANDIN AMIGO\n");
 		exit_point(data);
 	}
 	if (data->map[j][i] == '0')
@@ -35,7 +35,7 @@ static int keyboard_w_s(t_game *data, int movement)
 
 	i = data->x_axis;
 	j = data->y_axis;
-	if (movement == 13)
+	if (movement == 13 || movement == 126)
 	{
 		j--;
 		if (data->map[j][i] == '1')
@@ -45,7 +45,7 @@ static int keyboard_w_s(t_game *data, int movement)
 			return (0);
 		data->map[j + 1][i] = '0';
 	}
-	else if (movement == 1)
+	else if (movement == 1 || movement == 125)
 	{
 		j++;
 		if (data->map[j][i] == '1')
@@ -68,7 +68,7 @@ static int keyboard_a_d(t_game *data, int movement)
 
 	i = data->x_axis;
 	j = data->y_axis;
-	if (movement == 0)
+	if (movement == 0 || movement == 123)
 	{
 		i--;
 		if (data->map[j][i] == '1')
@@ -78,7 +78,7 @@ static int keyboard_a_d(t_game *data, int movement)
 			return (0);
 		data->map[j][i + 1] = '0';
 	}
-	else if (movement == 2)
+	else if (movement == 2 || movement == 124)
 	{
 		i++;
 		if (data->map[j][i] == '1')
@@ -99,13 +99,13 @@ int controls_working(int command, t_game *data)
 
 	if (command == 53)
 		exit_point(data);
-	if (command == 13)
+	if (command == 13 || command == 126)
 		works = keyboard_w_s(data, command);
-	if (command == 1)
+	if (command == 1 || command == 125)
 		works = keyboard_w_s(data, command);
-	if (command == 0)
+	if (command == 0 || command == 123)
 		works = keyboard_a_d(data, command);
-	if (command == 2)
+	if (command == 2 || command == 124)
 		works = keyboard_a_d(data, command);
 	if (works)
 		adding_in_graphics(data);

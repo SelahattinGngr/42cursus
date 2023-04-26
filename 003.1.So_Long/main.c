@@ -43,6 +43,7 @@ int main(int argc,char **argv)
     map_control(argv[1], &data);
     map_reading(&data);
     map_processing(&data);
+    wall_control(&data);
     data.mlxpointer = mlx_init();
     data.winpointer = mlx_new_window(data.mlxpointer, (data.map_width * 40), (data.map_height * 40), "solong");
     images_in_game(&data);
