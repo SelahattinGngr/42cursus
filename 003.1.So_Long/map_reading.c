@@ -87,7 +87,7 @@ void    map_reading(t_game *data)
         free(line);
     data->map_height = y;
     data->map_width = x;
-    if (data->map_height == data->map_width)
+    if (data->map_height == data->map_width || data->map_width == 1 || data->map_height == 1)
         err_msg("watafak amigo map dikdortgen degil");
     close(fd);
 }

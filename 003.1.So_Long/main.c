@@ -49,6 +49,7 @@ int main(int argc,char **argv)
     images_in_game(&data);
     adding_in_graphics(&data);
     map_bug(&data);
+    placeholder(&data, data.x_axis, data.y_axis);
     // basilan tuslarin karsiligini init ile actigimiz alanin icerisine isliyoruz
     // pencerede basilan tuslarin karsiligi basildiginda komut fonksiyonuna aktarilacak
     mlx_key_hook(data.winpointer, controls_working, &data);

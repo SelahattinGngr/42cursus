@@ -17,6 +17,7 @@ void    tmp_control(char *map_name)
     fd = open(map_name, O_RDONLY);
     if (fd < 0)
         err_msg("boyle bir map yok krdsm");
+    close(fd);
 }
 
 // mapin var olup olmadigini ve .ber uzantisinin olup olmadigini bakiyoruz

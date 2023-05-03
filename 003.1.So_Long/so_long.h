@@ -6,6 +6,7 @@ typedef struct l_start
     int     map_height;
     int     map_width;
     int     collectables;
+    int     read_count;
     int     counter;
     int     y_axis;
     int     x_axis;
@@ -43,6 +44,7 @@ void    map_reading(t_game *data);
 void    tmp_control(char *map_name);
 void    map_processing(t_game *data);
 void    images_in_game(t_game *data);
+void	placeholder(t_game *data, int x, int y);
 void    place_collectable(t_game *data, int height, int width);
 void    place_player(t_game *data, int height, int width);
 void    adding_in_graphics(t_game *data);
