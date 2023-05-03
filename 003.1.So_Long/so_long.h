@@ -46,5 +46,6 @@ void    images_in_game(t_game *data);
 void    place_collectable(t_game *data, int height, int width);
 void    place_player(t_game *data, int height, int width);
 void    adding_in_graphics(t_game *data);
+void    map_bug(t_game *data);
 
 #endif

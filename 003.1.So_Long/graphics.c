@@ -35,11 +35,11 @@ void adding_in_graphics(t_game *data)
     int width;
 
     data->collectables = 0;
-    height = 0;
-    while (height < data->map_height)
+    height = -1;
+    while (++height < data->map_height)
     {
-        width = 0;
-        while (data->map[height][width])
+        width = -1;
+        while (data->map[height][++width])
         {
             if (data->map[height][width] == '1')
                 mlx_put_image_to_window(data->mlxpointer,
@@ -54,8 +54,6 @@ void adding_in_graphics(t_game *data)
             if (data->map[height][width] == '0')
                 mlx_put_image_to_window(data->mlxpointer,
                                         data->winpointer, data->floor, width * 40, height * 40);
-            width++;
         }
-        height++;
     }
 }

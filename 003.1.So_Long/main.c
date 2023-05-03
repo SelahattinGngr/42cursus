@@ -48,6 +48,7 @@ int main(int argc,char **argv)
     data.winpointer = mlx_new_window(data.mlxpointer, (data.map_width * 40), (data.map_height * 40), "solong");
     images_in_game(&data);
     adding_in_graphics(&data);
+    map_bug(&data);
     // basilan tuslarin karsiligini init ile actigimiz alanin icerisine isliyoruz
     // pencerede basilan tuslarin karsiligi basildiginda komut fonksiyonuna aktarilacak
     mlx_key_hook(data.winpointer, controls_working, &data);
