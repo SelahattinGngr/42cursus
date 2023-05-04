@@ -1,5 +1,11 @@
 #ifndef SO_LONG_H
 #define SO_LONG_H
+typedef struct l_index
+{
+	int	i;
+	int	j;
+	int	k;
+} t_index;
 
 typedef struct l_start
 {
@@ -23,6 +29,8 @@ typedef struct l_start
     void *player;
     void *exit;
     void *collectable;
+
+	t_index index;
 } t_game;
 
 #include <stdio.h>

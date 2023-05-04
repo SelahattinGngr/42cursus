@@ -6,13 +6,13 @@
 /*   By: segungor <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:54:03 by segungor          #+#    #+#             */
-/*   Updated: 2022/10/26 23:21:58 by segungor         ###   ########.tr       */
+/*   Updated: 2023/05/04 03:35:33 by segungor         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (to_find[0] == '\0')

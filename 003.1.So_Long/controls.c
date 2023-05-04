@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   controls.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: segungor <42istanbul.com.tr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/04 00:03:51 by segungor          #+#    #+#             */
+/*   Updated: 2023/05/04 00:43:50 by segungor         ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-static int right_move(t_game *data, int i, int j)
+static int	right_move(t_game *data, int i, int j)
 {
 	if (data->map[j][i] == 'E')
 	{
 		if (data->collectables != 0)
 			return (0);
-		ft_printf("\nKAZANDIN AMIGO\n");
+		ft_printf("\nWIN AMIGO\n");
 		exit_point(data);
 	}
 	if (data->map[j][i] == '0')
@@ -27,75 +39,63 @@ static int right_move(t_game *data, int i, int j)
 	return (1);
 }
 
-static int keyboard_w_s(t_game *data, int movement)
+static int	keyboard_w_s(t_game *data, int movement)
 {
-	int i;
-	int j;
-	int k;
-
-	i = data->x_axis;
-	j = data->y_axis;
+	data->index.i = data->x_axis;
+	data->index.j = data->y_axis;
 	if (movement == 13 || movement == 126)
 	{
-		j--;
-		if (data->map[j][i] == '1')
+		if (data->map[--data->index.j][data->index.i] == '1')
 			return (0);
-		k = right_move(data, i, j);
-		if (!k)
+		data->index.k = right_move(data, data->index.i, data->index.j);
+		if (!data->index.k)
 			return (0);
-		data->map[j + 1][i] = '0';
+		data->map[data->index.j + 1][data->index.i] = '0';
 	}
 	else if (movement == 1 || movement == 125)
 	{
-		j++;
-		if (data->map[j][i] == '1')
+		if (data->map[++data->index.j][data->index.i] == '1')
 			return (0);
-		k = right_move(data, i, j);
-		if (!k)
+		data->index.k = right_move(data, data->index.i, data->index.j);
+		if (!data->index.k)
 			return (0);
-		data->map[j - 1][i] = '0';
+		data->map[data->index.j - 1][data->index.i] = '0';
 	}
-	ft_printf("Adim Sayisi: %d\n", data->counter);
-	ft_printf("Kalan Coinler: %d\n", data->collectables);
+	ft_printf("Step Count: %d\n", data->counter);
+	ft_printf("Remaining Coins: %d\n", data->collectables);
 	return (1);
 }
 
-static int keyboard_a_d(t_game *data, int movement)
+static int	keyboard_a_d(t_game *data, int movement)
 {
-	int i;
-	int j;
-	int k;
-
-	i = data->x_axis;
-	j = data->y_axis;
+	data->index.i = data->x_axis;
+	data->index.j = data->y_axis;
 	if (movement == 0 || movement == 123)
 	{
-		i--;
-		if (data->map[j][i] == '1')
+		if (data->map[data->index.j][--data->index.i] == '1')
 			return (0);
-		k = right_move(data, i, j);
-		if (!k)
+		data->index.k = right_move(data, data->index.i, data->index.j);
+		if (!data->index.k)
 			return (0);
-		data->map[j][i + 1] = '0';
+		data->map[data->index.j][data->index.i + 1] = '0';
 	}
 	else if (movement == 2 || movement == 124)
 	{
-		i++;
-		if (data->map[j][i] == '1')
+		if (data->map[data->index.j][++data->index.i] == '1')
 			return (0);
-		k = right_move(data, i, j);
-		if (!k)
+		data->index.k = right_move(data, data->index.i, data->index.j);
+		if (!data->index.k)
 			return (0);
-		data->map[j][i - 1] = '0';
+		data->map[data->index.j][data->index.i - 1] = '0';
 	}
-	ft_printf("Adim Sayisi: %d\n", data->counter);
-	ft_printf("Kalan Coinler: %d\n", data->collectables);
+	ft_printf("Step Count: %d\n", data->counter);
+	ft_printf("Remaining Coins: %d\n", data->collectables);
 	return (1);
 }
 
-int controls_working(int command, t_game *data)
+int	controls_working(int command, t_game *data)
 {
-	int works;
+	int	works;
 
 	if (command == 53)
 		exit_point(data);
