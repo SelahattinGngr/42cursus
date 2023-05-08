@@ -6,16 +6,16 @@
 /*   By: segungor <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:37:26 by segungor          #+#    #+#             */
-/*   Updated: 2023/01/05 22:37:28 by segungor         ###   ########.tr       */
+/*   Updated: 2023/05/06 14:13:50 by segungor         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *first_line(int fd, char *buffer)
+char	*first_line(int fd, char *buffer)
 {
-	char *buff;
-	int rd_byte;
+	char	*buff;
+	int		rd_byte;
 
 	rd_byte = 1;
 	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -37,10 +37,10 @@ char *first_line(int fd, char *buffer)
 	return (buffer);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	char *line;
-	static char *buffer;
+	char		*line;
+	static char	*buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);

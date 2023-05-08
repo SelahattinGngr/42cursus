@@ -41,6 +41,8 @@ static int	recur_func(int **int_map, t_game *data, int x, int y)
 {
 	if (data->map[y][x] == 'E' || data->map[y][x] == 'C')
 		data->read_count++;
+    if (data->map[y][x] == 'E')
+        return 0;
 	if (data->map[y][x + 1] != '1' && int_map[y][x + 1] < 1)
 	{
 		int_map[y][x + 1] = int_map[y][x] + 1;

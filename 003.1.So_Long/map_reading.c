@@ -14,53 +14,63 @@
 
 void	wall_control(t_game *data)
 {
-	int	i;
-	int	j;
-	int	width;
-	int	height;
+    int	i;
+    int	j;
+    int	width;
+    int	height;
 
-	j = 0;
-	i = 0;
-	width = data->map_width - 1;
-	height = data->map_height - 1;
-	while (i <= height)
-	{
-		if (data->map[i][0] != '1' || data->map[i][width] != '1')
-			err_msg("the map is not covered with walls");
-		i++;
-	}
-	while (j <= width)
-	{
-		if (data->map[0][j] != '1' || data->map[height][j] != '1')
-			err_msg("the map is not covered with walls");
-		j++;
-	}
+    j = 0;
+    i = 0;
+    width = data->map_width - 1;
+    height = data->map_height - 1;
+    while (i <= height)
+    {
+        if (data->map[i][0] != '1' || data->map[i][width] != '1')
+            err_msg("the map is not covered with walls");
+        i++;
+    }
+    while (j <= width)
+    {
+        if (data->map[0][j] != '1' || data->map[height][j] != '1')
+            err_msg("the map is not covered with walls");
+        j++;
+    }
+}
+
+static void size_control(t_game *data, char *line)
+{
+    int i;
+
+    i = 0;
+    while (line[i] != '\0' && line[i] != '\n')
+        i++;
+    if (i != data->map_width)
+        err_msg("annen yamuk kalmis oc düzelteyimmi? xd:D");
 }
 
 void	map_processing(t_game *data)
 {
 	int		fd;
-	int		i;
-	int		j;
 	char	*line;
 
-	i = 0;
+	data->index.i = 0;
 	data->map = (char **)malloc(sizeof(char *) * data->map_height);
 	fd = open(data->maplocation, O_RDONLY);
-	while (i < data->map_height)
+	while (data->index.i < data->map_height)
 	{
-		j = 0;
+		data->index.j = 0;
 		line = get_next_line(fd);
-		data->map[i] = (char *)malloc(sizeof(char) * data->map_width);
+        size_control(data,line);
+		data->map[data->index.i] = (char *)malloc(sizeof(char) * data->map_width);
 		if (line == NULL)
 			break ;
-		while (j < data->map_width)
+		while (data->index.j < data->map_width)
 		{
-			data->map[i][j] = line[j];
-			j++;
+			data->map[data->index.i][data->index.j] = line[data->index.j];
+            data->index.j++;
 		}
-		data->map[i][j] = '\0';
-		i++;
+		data->map[data->index.i][data->index.j] = '\0';
+        data->index.i++;
 		free(line);
 	}
 	close(fd);
