@@ -1,0 +1,1 @@
+42 projesi olan libft'den daha farklı olan ultimate libft işime yarayabilme potansiyeli olabilitesi olan her fonksiyonu barındırması icin yaptığım daha fonksiyonel bir kütüphane.
