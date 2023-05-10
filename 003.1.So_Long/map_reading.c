@@ -45,7 +45,7 @@ static void size_control(t_game *data, char *line)
     while (line[i] != '\0' && line[i] != '\n')
         i++;
     if (i != data->map_width)
-        err_msg("annen yamuk kalmis oc düzelteyimmi? xd:D");
+        err_msg("Map Yamuk Dude");
 }
 
 void	map_processing(t_game *data)
