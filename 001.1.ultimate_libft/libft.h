@@ -6,7 +6,7 @@
 /*   By: segungor <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 22:16:20 by segungor          #+#    #+#             */
-/*   Updated: 2022/12/22 22:16:24 by segungor         ###   ########.tr       */
+/*   Updated: 2023/05/11 13:46:32 by segungor         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # define BUFFER_SIZE 50
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -26,6 +25,7 @@ typedef struct s_list
 }	t_list;
 
 // get next line utils
+
 char	*get_next_line(int fd);
 char	*get_new_line(char *buffer);
 char	*first_line(int fd, char *buffer);
@@ -35,11 +35,11 @@ int		find_nl_char(char *buffer);
 size_t	ftgnl_strlen(char *buf);
 
 // ft_printf utils
-int	    ft_printf(const char *str, ...);
-int	ftp_putchar(char c);
-int	ftp_putstr(char *str);
-int	ftp_itoa_base(unsigned long long nbr, int base, char *str, int mod);
-int	ftp_check_format(va_list args, char format);
+int		ft_printf(const char *str, ...);
+int		ftp_putchar(char c);
+int		ftp_putstr(char *str);
+int		ftp_itoa_base(unsigned long long nbr, int base, char *str, int mod);
+int		ftp_check_format(va_list args, char format);
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
