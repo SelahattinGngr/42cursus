@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ftt_putcharr(char c)
+int	ftp_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
-int	ftt_putstrr(char *str)
+int	ftp_putstr(char *str)
 {
 	int	len;
 	int	index;
@@ -24,13 +24,13 @@ int	ftt_putstrr(char *str)
 	index = 0;
 	len = 0;
 	if (!str)
-		return (ftt_putstrr("(null)"));
+		return (ftp_putstr("(null)"));
 	while (str[index] != '\0')
-		len += ftt_putcharr(str[index++]);
+		len += ftp_putchar(str[index++]);
 	return (len);
 }
 
-int	ft_itoa_base(unsigned long long nbr, int base, char *str, int mod)
+int	ftp_itoa_base(unsigned long long nbr, int base, char *str, int mod)
 {
 	int	nbr_list[100];
 	int	index;
@@ -41,46 +41,46 @@ int	ft_itoa_base(unsigned long long nbr, int base, char *str, int mod)
 	if (mod == 1 && (int)nbr < 0)
 	{
 		nbr *= -1;
-		len += ftt_putcharr('-');
+		len += ftp_putchar('-');
 	}
 	if (mod == 2)
-		len += ftt_putstrr("0x");
+		len += ftp_putstr("0x");
 	if (nbr == 0)
-		len += ftt_putcharr('0');
+		len += ftp_putchar('0');
 	while (nbr)
 	{
 		nbr_list[index++] = nbr % base;
 		nbr = nbr / base;
 	}
 	while (index--)
-		len += ftt_putcharr(str[nbr_list[index]]);
+		len += ftp_putchar(str[nbr_list[index]]);
 	return (len);
 }
 
-int	ft_check_format(va_list args, char format)
+int	ftp_check_format(va_list args, char format)
 {
 	int	len;
 
 	len = 0;
 	if (format == 'c')
-		len += ftt_putcharr(va_arg(args, int));
+		len += ftp_putchar(va_arg(args, int));
 	else if (format == 's')
-		len += ftt_putstrr(va_arg(args, char *));
+		len += ftp_putstr(va_arg(args, char *));
 	else if (format == 'u')
-		len += ft_itoa_base(va_arg(args, unsigned int), 10, "0123456789", 0);
+		len += ftp_itoa_base(va_arg(args, unsigned int), 10, "0123456789", 0);
 	else if (format == 'd' || format == 'i' || format == 'u')
-		len += ft_itoa_base(va_arg(args, int), 10, "0123456789", 1);
+		len += ftp_itoa_base(va_arg(args, int), 10, "0123456789", 1);
 	else if (format == 'p')
-		len += ft_itoa_base(va_arg(args, unsigned long long), 16,
+		len += ftp_itoa_base(va_arg(args, unsigned long long), 16,
 				"0123456789abcdef", 2);
 	else if (format == 'x')
-		len += ft_itoa_base(va_arg(args, unsigned int), 16,
+		len += ftp_itoa_base(va_arg(args, unsigned int), 16,
 				"0123456789abcdef", 0);
 	else if (format == 'X')
-		len += ft_itoa_base(va_arg(args, unsigned int), 16,
+		len += ftp_itoa_base(va_arg(args, unsigned int), 16,
 				"0123456789ABCDEF", 0);
 	else if (format == '%')
-		len += ftt_putcharr('%');
+		len += ftp_putchar('%');
 	return (len);
 }
 
@@ -98,10 +98,10 @@ int	ft_printf(const char *str, ...)
 		if (str[index] == '%')
 		{
 			index++;
-			len += ft_check_format(args, str[index]);
+			len += ftp_check_format(args, str[index]);
 		}
 		else
-			len += ftt_putcharr(str[index]);
+			len += ftp_putchar(str[index]);
 		index++;
 	}
 	va_end(args);
