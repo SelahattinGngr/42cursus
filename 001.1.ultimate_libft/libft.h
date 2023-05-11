@@ -25,7 +25,6 @@ typedef struct s_list
 }	t_list;
 
 // get next line utils
-
 char	*get_next_line(int fd);
 char	*get_new_line(char *buffer);
 char	*first_line(int fd, char *buffer);
