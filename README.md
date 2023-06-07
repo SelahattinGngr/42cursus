@@ -7,7 +7,7 @@
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
 
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/segungor/<gist-ID>/raw/<filename>.json)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/segungor/e68282bd835f9dab85e2c6b9b5522143/raw/<filename>.json)
 
  Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
