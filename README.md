@@ -7,8 +7,6 @@
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
 
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/segungor)
-
  Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
 | libft          | ![libft-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/libftm.png)                |
