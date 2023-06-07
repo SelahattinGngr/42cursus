@@ -7,6 +7,8 @@
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
 
+[![42 Project Score](https://42-project-badge.glitch.me/users/LOGIN42/project/PROJECT42)](https://github.com/ricardoreves/42-project-badge)
+
  Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
 | libft          | ![libft-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/libftm.png)                |
