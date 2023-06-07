@@ -7,7 +7,7 @@
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
 
-[![42 Project Score](https://42-project-badge.glitch.me/users/segungor/project/PROJECT42)](https://github.com/ricardoreves/42-project-badge)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/<user>/<gist-ID>/raw/<filename>.json)
 
  Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
