@@ -10,3 +10,4 @@
  Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
 | libft          | ![libft-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/libftm.png)|
+| get_next_line  | ![get_next_line-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/get_next_linem.png)|
