@@ -7,7 +7,7 @@
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
 
- Project       |                    Badge                     | |Project       |                    Badge                     |
+ Project       |                    Badge                     | --- |Project       |                    Badge                     |
 | :------------  | :------------------------------------------: |
 | libft          | ![libft-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/libftm.png)                || get_next_line  | ![get_next_line-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/get_next_linem.png)|
 | ft_printf      | ![ft_printf-bonus](https://github.com/byaliego/42-project-badges/blob/main/badges/ft_printfe.png)        |
