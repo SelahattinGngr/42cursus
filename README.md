@@ -6,9 +6,7 @@
     - verilen sayilar benim teslim etme siralamama goredir, siralama & proje sirasi kisiye goredir
   - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
 
-<p align="center">
 <a href="https://github.com/SelahattinGngr"><img src="https://badge42.vercel.app/api/v2/cli9da70v001608jw3ipf9l3b/stats?cursusId=21&coalitionId=232" alt="segungor's 42 stats" /></a>
-</p>
 
 
 |     Project    |                                            Badge                                                       |   |    Project    |                                                 Badge                                                    |
