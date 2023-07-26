@@ -68,7 +68,7 @@ int	ft_check_format(va_list args, char format)
 		len += ft_putstr(va_arg(args, char *));
 	else if (format == 'u')
 		len += ft_itoa_base(va_arg(args, unsigned int), 10, "0123456789", 0);
-	else if (format == 'd' || format == 'i' || format == 'u')
+	else if (format == 'd' || format == 'i')
 		len += ft_itoa_base(va_arg(args, int), 10, "0123456789", 1);
 	else if (format == 'p')
 		len += ft_itoa_base(va_arg(args, unsigned long long), 16,
