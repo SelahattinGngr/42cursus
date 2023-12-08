@@ -5,11 +5,6 @@ Fixed::Fixed(){
 	this->fixed_value = 0;
 }
 
-Fixed::Fixed(int a){
-	cout << "default constructor" << endl;
-	this->fixed_value = a;
-}
-
 Fixed::Fixed(const Fixed &copyFixed){
 	cout << "copy constructor" << endl;
 	*this = copyFixed;
