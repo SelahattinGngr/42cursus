@@ -10,6 +10,7 @@ int g = 5;
 int h;
 h = g;
 a = Fixed( 1234.4321f );
+
 std::cout << "a is " << a << std::endl;
 std::cout << "b is " << b << std::endl;
 std::cout << "c is " << c << std::endl;

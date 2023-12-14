@@ -3,15 +3,12 @@
 
 #include "iostream"
 
-#define cout std::cout
-#define endl std::endl
-
 class Fixed {
 	private:
 		int  fixed_value;
 		static const int fractional_value = 8;
 	public:
-		Fixed();
+		Fixed(int fixedValue = 0);
 		Fixed(const Fixed &copyFixed);
 		Fixed &operator=(Fixed const &fixed);
 		~Fixed();
