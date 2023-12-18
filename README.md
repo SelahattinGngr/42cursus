@@ -4,7 +4,7 @@
   - 00x  x = bulunan halkayi temsil eden sayidir
   - 00x.y y = bulunan halkadaki projeyi temsil eden sayidir
     - verilen sayilar benim teslim etme siralamama goredir, siralama & proje sirasi kisiye goredir
-  - 00x.y.j j = daha once yapilmis bir projenin guncellenmis uzerine katlanmis halidir
+  - 00x.y.j j = yan yana hepsi verilmesi zorunlu projelerin verilme siralamasi
 
 <a href="https://github.com/SelahattinGngr"><img src="https://badge42.vercel.app/api/v2/cli9da70v001608jw3ipf9l3b/stats?cursusId=21&coalitionId=232" alt="segungor's 42 stats" /></a>
 
