@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:10 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:11 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:26:27 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,4 @@ void	free_exit_err(char *err_msg, t_game *game)
 	end_malloc(game->mc);
 	ft_putstr_fd(err_msg, 2);
 	exit(EXIT_FAILURE);
-}
-
-int	free_return_err(t_game *game)
-{
-	end_malloc(game->mc);
-	return (RETURN_FAILURE);
 }

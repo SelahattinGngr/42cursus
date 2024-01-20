@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:42 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:43 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:49:25 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main(int argc, char **argv)
 	game.mlx = mlx_init();
 	init_game(&game);
 	check_arg(argc, argv, &game);
+	control(&game, argv);
 	init_map(&game);
 	dup_map(&game);
 	get_map_game(&game);

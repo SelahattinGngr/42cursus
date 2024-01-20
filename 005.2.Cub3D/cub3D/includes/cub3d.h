@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:36:33 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:36:34 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:23:36 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ void	get_map_game(t_game *game);
 void	deinitialize(t_game *game);
 void	player_move(t_game *game);
 void	perform_dda(t_game *game, t_calculator *calc);
+void	placeholder(t_game *data, int x, int y);
 void	parse_last(t_game *game, char *line);
 void	parse_map(char *line, t_game *game);
 void	check_arg(int argc, char **argv, t_game *game);
@@ -164,6 +165,7 @@ void	start_ray(int x, t_game *game, t_calculator *calc);
 void	init_dda(t_game *game, t_calculator *calc);
 void	add_node(t_maplist *list, t_node *node);
 void	dup_map(t_game *game);
+void	control(t_game *game, char **argv);
 
 int		get_textures(char *line, t_game *game);
 int		key_release(int keycode, t_game *game);

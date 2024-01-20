@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:44 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:45 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:01:04 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../includes/utils.h"
 #include "../includes/error.h"
 #include "stdlib.h"
+#include "stdio.h"
 
 static int	is_valid_string(char *str)
 {
@@ -43,10 +44,10 @@ static int	parse_color(char *str, int *rgb, int *count, t_game *game)
 	{
 		color = -1;
 		if (is_valid_string(split[i]))
-			return (free_return_err(game));
+			return (1);
 		color = ft_atoi(split[i]);
 		if ((color < 0 || color > 255) || *count > 2)
-			return (free_return_err(game));
+			return (1);
 		rgb[*count] = color;
 		*count += 1;
 		i++;

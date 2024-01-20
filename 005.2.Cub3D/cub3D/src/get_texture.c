@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:29 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:29 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:34:51 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ static void	load_texture(t_game *game, int dir, char *path)
 
 static int	check_extension(char *filename, char *extension)
 {
-	*(filename + ft_strlen(filename) - 1) = 0;
 	if (!filename)
 		return (EXIT_FAILURE);
+	*(filename + ft_strlen(filename) - 1) = 0;
 	if (ft_strncmp(filename + ft_strlen(filename) - 4, extension, 5))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);

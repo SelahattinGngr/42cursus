@@ -6,17 +6,17 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:02 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:59 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:45:52 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 #include "stdlib.h"
+#include "stdio.h"
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

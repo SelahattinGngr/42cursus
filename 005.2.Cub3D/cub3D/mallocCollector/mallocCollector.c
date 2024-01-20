@@ -84,6 +84,8 @@ void	delete_malloc(t_mallocCollector *mc, void *ptr_to_delete)
 
 void	end_malloc(t_mallocCollector *mc)
 {
+	if (!mc)
+		return ;
 	if (mc->next != NULL)
 		end_malloc(mc->next);
 	if (mc->new_malloc)

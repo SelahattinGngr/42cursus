@@ -6,7 +6,7 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:49 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:50 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:34:17 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "../get_next_line/get_next_line.h"
 #include "stdlib.h"
 #include "fcntl.h"
-#include "unistd.h"
 
 static void	parse_line(t_game *game, char *line)
 {
