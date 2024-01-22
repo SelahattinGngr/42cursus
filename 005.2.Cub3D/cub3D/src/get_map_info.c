@@ -50,25 +50,8 @@ void	dup_map(t_game *game)
 	game->map[i] = NULL;
 }
 
-//static int	check_position(t_game *game, int i, int j)
-//{
-//	if (i - 1 < 0 || j - 1 < 0 || \
-//		i + 1 > game->map_height || j + 1 > game->map_width)
-//		return (RETURN_FAILURE);
-//	if (game->map[i - 1][j] != '0' && game->map[i - 1][j] != '1')
-//		return (RETURN_FAILURE);
-//	if (game->map[i + 1][j] != '0' && game->map[i + 1][j] != '1')
-//		return (RETURN_FAILURE);
-//	if (game->map[i][j - 1] != '0' && game->map[i][j - 1] != '1')
-//		return (RETURN_FAILURE);
-//	if (game->map[i][j + 1] != '0' && game->map[i][j + 1] != '1')
-//		return (RETURN_FAILURE);
-//	return (RETURN_SUCCESS);
-//}
-
 static int	check_blank(t_game *game, int i, int j)
 {
-	printf("%c ", game->map[i][j]);
 	if (i - 1 > 0)
 		if (game->map[i - 1][j] != ' ' \
 			&& game->map[i - 1][j] != '1' && game->map[i - 1][j] != '\n')
@@ -92,6 +75,8 @@ void	get_map_game(t_game *game)
 {
 	int		i;
 	int		j;
+	int		x;
+	int		y;
 
 	i = -1;
 	while (++i < game->map_height)
@@ -101,12 +86,14 @@ void	get_map_game(t_game *game)
 		{
 			if (ft_isalpha(game->map[i][j]))
 			{
-				placeholder(game, i, j);
 				player_position(game, i, j);
+				x = i;
+				y = j;
 			}
 			else if (game->map[i][j] == ' ')
 				if (check_blank(game, i, j))
 					exit_err("Invalid map\n", game);
 		}
 	}
+	placeholder(game);
 }

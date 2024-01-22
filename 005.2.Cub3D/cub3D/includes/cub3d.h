@@ -157,7 +157,7 @@ void	get_map_game(t_game *game);
 void	deinitialize(t_game *game);
 void	player_move(t_game *game);
 void	perform_dda(t_game *game, t_calculator *calc);
-void	placeholder(t_game *data, int x, int y);
+void	placeholder(t_game *data);
 void	parse_last(t_game *game, char *line);
 void	parse_map(char *line, t_game *game);
 void	check_arg(int argc, char **argv, t_game *game);
