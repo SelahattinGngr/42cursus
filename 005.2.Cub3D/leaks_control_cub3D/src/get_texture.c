@@ -6,15 +6,14 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:29 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/15 10:32:44 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:34:51 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "stdlib.h"
 #include "fcntl.h"
+#include "unistd.h"
 
 //static void	load_image(t_game *game, int *texture, char *path)
 //{
@@ -35,7 +34,7 @@
 //	}
 //	mlx_destroy_image(game->mlx, img.img);
 //}
-
+//
 //static void	load_texture(t_game *game, int dir, char *path)
 //{
 //	load_image(game, game->texture[dir], path);
@@ -43,9 +42,9 @@
 
 static int	check_extension(char *filename, char *extension)
 {
-	*(filename + ft_strlen(filename) - 1) = 0;
 	if (!filename)
 		return (EXIT_FAILURE);
+	*(filename + ft_strlen(filename) - 1) = 0;
 	if (ft_strncmp(filename + ft_strlen(filename) - 4, extension, 5))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -55,11 +54,11 @@ static int	get_texture(char *line, t_game *game, int dir)
 {
 	int		fd;
 	char	**split;
-	(void)dir; // leaks control
-
+	(void)dir;
+	
 	split = ft_split(line, ' ', game);
 	if (!split)
-		system_err("Malloc Error", game);
+		exit_err("Malloc Error", game);
 	if (ft_splitlen(split) != 2 || check_extension(split[1], ".xpm"))
 	{
 		return (RETURN_FAILURE);
@@ -69,6 +68,8 @@ static int	get_texture(char *line, t_game *game, int dir)
 		return (RETURN_FAILURE);
 	//load_texture(game, dir, split[1]);
 	game->dir_flag++;
+	if (close(fd) < 0)
+		exit_err("Close Failed Error", game);
 	return (RETURN_SUCCESS);
 }
 

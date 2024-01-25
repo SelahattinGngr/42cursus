@@ -6,13 +6,12 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:34 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:35 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:00:47 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 #include "math.h"
-#include "stdlib.h"
 
 static void	close_window(t_game *game)
 {

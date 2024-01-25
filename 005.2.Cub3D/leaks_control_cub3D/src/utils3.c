@@ -6,11 +6,11 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:36:03 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/11 16:36:06 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:10:30 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
+#include "../includes/error.h"
 #include "limits.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -60,9 +60,9 @@ int	ft_atoi(const char *nptr)
 {
 	unsigned long	ret_val;
 	int				index;
-	int				isaret;
+	int				flag;
 
-	isaret = 1;
+	flag = 1;
 	index = 0;
 	if (*nptr == '\0')
 		return (0);
@@ -71,15 +71,15 @@ int	ft_atoi(const char *nptr)
 	if (nptr[index] == '-' || nptr[index] == '+')
 	{
 		if (nptr[index] == '-')
-			isaret *= -1;
+			flag *= -1;
 		index++;
 	}
 	ret_val = 0;
 	while (nptr[index] >= '0' && nptr[index] <= '9')
 		ret_val = (ret_val * 10) + (nptr[index++] - '0');
-	if (ret_val > LONG_MAX && isaret == -1)
+	if (ret_val > LONG_MAX && flag == -1)
 		return (0);
-	if (ret_val > LONG_MAX && isaret == 1)
+	if (ret_val > LONG_MAX && flag == 1)
 		return (-1);
-	return (ret_val * isaret);
+	return (ret_val * flag);
 }

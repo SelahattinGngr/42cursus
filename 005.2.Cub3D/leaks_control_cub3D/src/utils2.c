@@ -6,12 +6,11 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:36:01 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/15 10:38:07 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:36:02 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-#include "stdlib.h"
 
 void	key_leftright(t_game *game)
 {
@@ -42,6 +41,7 @@ void	key_leftright(t_game *game)
 void	deinitialize(t_game *game)
 {
 	(void)game;
+
 	//mlx_destroy_image(game->mlx, game->img.img);
 	//mlx_clear_window(game->mlx, game->win);
 	//mlx_destroy_window(game->mlx, game->win);

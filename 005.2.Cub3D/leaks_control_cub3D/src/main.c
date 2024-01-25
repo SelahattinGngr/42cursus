@@ -6,13 +6,11 @@
 /*   By: segungor <segungor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:42 by segungor          #+#    #+#             */
-/*   Updated: 2024/01/15 10:38:41 by segungor         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:49:25 by segungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/init.h"
-#include "stdlib.h"
 
 //static int	exit_press(t_game *game)
 //{
@@ -20,7 +18,7 @@
 //	end_malloc(game->mc);
 //	exit(EXIT_SUCCESS);
 //}
-
+//
 //static void	draw(t_game *game)
 //{
 //	int		x;
@@ -35,7 +33,7 @@
 //	}
 //	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 //}
-//
+
 //static void	calc(t_game *game)
 //{
 //	int				x;
@@ -52,7 +50,7 @@
 //		x++;
 //	}
 //}
-
+//
 //static int	main_loop(t_game *game)
 //{
 //	calc(game);
@@ -69,9 +67,11 @@ int	main(int argc, char **argv)
 	//game.mlx = mlx_init();
 	init_game(&game);
 	check_arg(argc, argv, &game);
+	control(&game, argv);
 	init_map(&game);
 	dup_map(&game);
 	get_map_game(&game);
+	wall_check(&game);
 	//game.win = mlx_new_window(game.mlx, SCREEN_W, SCREEN_H, "Cub3D");
 	//game.img.img = mlx_new_image(game.mlx, SCREEN_W, SCREEN_H);
 	//game.img.data = (int *)mlx_get_data_addr \
