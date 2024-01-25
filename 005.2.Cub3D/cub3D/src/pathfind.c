@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "unistd.h"
-#include "stdlib.h"
-#include "stdio.h"
 
 static int	recur_func(int **int_map, t_game *data, int x, int y)
 {

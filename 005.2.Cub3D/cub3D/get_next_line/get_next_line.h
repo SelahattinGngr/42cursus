@@ -13,8 +13,6 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include "../includes/cub3d.h"
 
 char	*get_next_line(t_game *game, int fd);

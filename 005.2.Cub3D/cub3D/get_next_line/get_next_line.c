@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "unistd.h"
 
 static char	*first_line(t_game *game, int fd, char *buffer)
 {

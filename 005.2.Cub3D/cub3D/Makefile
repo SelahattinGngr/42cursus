@@ -1,7 +1,7 @@
 SRCS = src/main.c src/error.c src/ft_split.c src/ft_strjoin_free.c src/get_map_info.c \
 		src/get_texture.c src/init.c src/key_press.c src/list.c src/parse_color.c src/parse_map.c \
 		src/parse.c src/control.c src/pathfind.c src/player_position.c src/ray.c src/texture.c src/utils.c src/utils2.c src/utils3.c \
-		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c mallocCollector/mallocCollector.c
+		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c mallocCollector/mallocCollector.c src/wall_check.c
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc

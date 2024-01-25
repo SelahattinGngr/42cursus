@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
-#include "../includes/error.h"
 #include "../includes/utils.h"
 
 void	init_map(t_game *game)

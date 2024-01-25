@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-#include "stdlib.h"
-#include "stdio.h"
 
 int	ft_isalpha(int c)
 {

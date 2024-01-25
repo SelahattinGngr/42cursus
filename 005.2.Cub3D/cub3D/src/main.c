@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/init.h"
-#include "stdlib.h"
 
 static int	exit_press(t_game *game)
 {
@@ -73,6 +71,7 @@ int	main(int argc, char **argv)
 	init_map(&game);
 	dup_map(&game);
 	get_map_game(&game);
+	wall_check(&game);
 	game.win = mlx_new_window(game.mlx, SCREEN_W, SCREEN_H, "Cub3D");
 	game.img.img = mlx_new_image(game.mlx, SCREEN_W, SCREEN_H);
 	game.img.data = (int *)mlx_get_data_addr \

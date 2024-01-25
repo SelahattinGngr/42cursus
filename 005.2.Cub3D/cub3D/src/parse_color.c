@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "stdlib.h"
-#include "stdio.h"
 
 static int	is_valid_string(char *str)
 {
@@ -38,7 +35,7 @@ static int	parse_color(char *str, int *rgb, int *count, t_game *game)
 
 	split = ft_split(str, ',', game);
 	if (!split)
-		system_err("Malloc Error", game);
+		exit_err("Malloc Error", game);
 	i = 0;
 	while (split[i])
 	{
@@ -92,7 +89,7 @@ void	get_background_color(char *line, t_game *game, int flag)
 		exit_err("Map: Invalid Color Value\n", game);
 	split = ft_split(line, ' ', game);
 	if (!split)
-		system_err("Malloc Error", game);
+		exit_err("Malloc Error", game);
 	if (ft_splitlen(split) < 2)
 		free_exit_err("Map: Invalid Color Value\n", game);
 	while (split[i])

@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "stdlib.h"
 #include "fcntl.h"
+#include "unistd.h"
 
 static void	load_image(t_game *game, int *texture, char *path)
 {
@@ -58,7 +57,7 @@ static int	get_texture(char *line, t_game *game, int dir)
 
 	split = ft_split(line, ' ', game);
 	if (!split)
-		system_err("Malloc Error", game);
+		exit_err("Malloc Error", game);
 	if (ft_splitlen(split) != 2 || check_extension(split[1], ".xpm"))
 	{
 		return (RETURN_FAILURE);
@@ -68,6 +67,8 @@ static int	get_texture(char *line, t_game *game, int dir)
 		return (RETURN_FAILURE);
 	load_texture(game, dir, split[1]);
 	game->dir_flag++;
+	if (close(fd) < 0)
+		exit_err("Close Failed Error", game);
 	return (RETURN_SUCCESS);
 }
 

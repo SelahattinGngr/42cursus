@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/error.h"
 #include "../includes/utils.h"
-#include "stdlib.h"
-#include "unistd.h"
 
 static int	check_map_content(t_game *game, char c)
 {
