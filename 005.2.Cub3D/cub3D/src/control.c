@@ -16,7 +16,6 @@
 #include "../get_next_line/get_next_line.h"
 #include "fcntl.h"
 #include "unistd.h"
-#include "stdio.h"
 
 static int	direction_repeat_control(t_game *game, int fd)
 {
@@ -54,7 +53,8 @@ static int	rgb_control(char *line)
 	i = -1;
 	while (line[++i])
 	{
-		if (line[i] == ',' && !ft_isdigit(line[i - 1]))
+		if (line[i] == ',' && (!ft_isdigit(line[i - 1]) || \
+			!ft_isdigit(line[i + 1])))
 			return (RETURN_FAILURE);
 	}
 	return (RETURN_SUCCESS);
@@ -80,7 +80,8 @@ static int	c_f_control(t_game *game, char *file)
 		delete_malloc(game->mc, line);
 		line = get_next_line(game, fd);
 	}
-	close(fd);
+	if (close(fd) < 0)
+		exit_err("Close Failed Error", game);
 	return (c != 0 || f != 0);
 }
 
@@ -90,8 +91,12 @@ void	control(t_game *game, char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (direction_repeat_control(game, fd))
+	{
+		close(fd);
 		exit_err("direction repeat error.\n", game);
-	close(fd);
+	}
+	if (close(fd) < 0)
+		exit_err("Close Failed Error", game);
 	if (c_f_control(game, argv[1]))
 		exit_err("C/F error.\n", game);
 }

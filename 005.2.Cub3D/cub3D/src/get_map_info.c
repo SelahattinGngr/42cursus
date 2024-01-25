@@ -13,8 +13,6 @@
 #include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "stdlib.h"
-#include "stdio.h"
 
 static void	b_space(t_game *game, t_node *node, int i)
 {

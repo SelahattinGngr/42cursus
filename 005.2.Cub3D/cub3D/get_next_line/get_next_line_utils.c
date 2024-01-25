@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "stdlib.h"
 
 static size_t	ft_strlen(const char *buf)
 {

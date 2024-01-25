@@ -11,9 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-#include "../includes/error.h"
 #include "../includes/utils.h"
-#include "stdlib.h"
 
 t_node	*create_node(char *line, t_game *game)
 {

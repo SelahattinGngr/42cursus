@@ -12,7 +12,6 @@
 
 #include "../includes/cub3d.h"
 #include "math.h"
-#include "stdlib.h"
 
 static void	close_window(t_game *game)
 {

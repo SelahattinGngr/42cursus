@@ -19,11 +19,14 @@ t_mallocCollector	*malloc_start(void)
 	t_mallocCollector	*mc;
 
 	mc = (t_mallocCollector *)malloc(sizeof(t_mallocCollector));
-	if (mc != NULL)
+	if (mc == NULL)
 	{
-		mc->new_malloc = NULL;
-		mc->next = NULL;
+		write(1, "| malloc_start allocate error >:|     |\n", 40);
+		write(1, "| line 21: void *ptr                  |\n", 40);
+		exit(1);
 	}
+	mc->new_malloc = NULL;
+	mc->next = NULL;
 	return (mc);
 }
 
@@ -38,7 +41,7 @@ void	*new_malloc(t_mallocCollector *mc, size_t size)
 	if (!ptr)
 	{
 		write(1, "| new_malloc allocate error >:|       |\n", 40);
-		write(1, "| line 22: void *ptr                  |\n", 40);
+		write(1, "| line 33: void *ptr                  |\n", 40);
 		end_malloc(mc);
 		exit(1);
 	}
@@ -46,7 +49,7 @@ void	*new_malloc(t_mallocCollector *mc, size_t size)
 	if (!new_node)
 	{
 		write(1, "| new_malloc allocate error >:|       |\n", 40);
-		write(1, "| line 39: t_mallocCollector *new_node |\n", 40);
+		write(1, "| line 48: t_mallocCollector *new_node |\n", 40);
 		end_malloc(mc);
 		exit(1);
 	}

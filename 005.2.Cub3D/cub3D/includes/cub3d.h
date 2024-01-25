@@ -166,6 +166,7 @@ void	init_dda(t_game *game, t_calculator *calc);
 void	add_node(t_maplist *list, t_node *node);
 void	dup_map(t_game *game);
 void	control(t_game *game, char **argv);
+void	wall_check(t_game *game);
 
 int		get_textures(char *line, t_game *game);
 int		key_release(int keycode, t_game *game);

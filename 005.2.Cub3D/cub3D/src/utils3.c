@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
-#include "limits.h"
 #include "../includes/error.h"
+#include "limits.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

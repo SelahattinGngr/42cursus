@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-#include "stdlib.h"
 
 void	key_leftright(t_game *game)
 {

@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-#include "stdlib.h"
-#include "stdio.h"
 #include "unistd.h"
 
 static void	ft_putstr_fd(char *s, int fd)
@@ -33,13 +31,6 @@ static void	ft_putstr_fd(char *s, int fd)
 void	exit_err(char *err_msg, t_game *game)
 {
 	ft_putstr_fd(err_msg, 2);
-	end_malloc(game->mc);
-	exit(EXIT_FAILURE);
-}
-
-void	system_err(char *err_msg, t_game *game)
-{
-	perror(err_msg);
 	end_malloc(game->mc);
 	exit(EXIT_FAILURE);
 }
