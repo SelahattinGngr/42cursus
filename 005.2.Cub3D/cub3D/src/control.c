@@ -92,7 +92,8 @@ void	control(t_game *game, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (direction_repeat_control(game, fd))
 	{
-		close(fd);
+		if (close(fd) < 0)
+			exit_err("Close Failed Error", game);
 		exit_err("direction repeat error.\n", game);
 	}
 	if (close(fd) < 0)
