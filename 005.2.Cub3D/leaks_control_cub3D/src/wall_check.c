@@ -15,14 +15,12 @@
 
 static int	control_2(char **maps, int s, int j)
 {
-	if ((maps[s][j - 1] == '1' && maps[s - 1][j] == '1') || \
-		(maps[s][j + 1] == '0' && maps[s][j - 1] == '1' && \
-		maps[s + 1][j] == '1' && maps[s - 1][j] == '0') || \
-		(maps[s][j + 1] == '1' && maps[s][j - 1] == '0' && \
-		maps[s + 1][j] == '0' && maps[s - 1][j] == '1') || \
-		(maps[s][j - 1] == '1') || \
-		(s - 1 >= 0 && maps[s][j + 1] == '1' && maps[s - 1][j] == '1') || \
-		(s - 1 >= 0 && maps[s - 1][j] == '1' && maps[s + 1][j] == '1'))
+	if ((j && s && maps[s][j - 1] == '1' && maps[s - 1][j] == '1') || \
+		(j && s && maps[s][j + 1] == '0' && maps[s][j - 1] == '1' && maps[s + 1][j] == '1' && maps[s - 1][j] == '0') || \
+		(j && s && maps[s][j + 1] == '1' && maps[s][j - 1] == '0' && maps[s + 1][j] == '0' && maps[s - 1][j] == '1') || \
+		(j && maps[s][j - 1] == '1') || \
+		(s && maps[s][j + 1] == '1' && maps[s - 1][j] == '1') || \
+		(s && maps[s - 1][j] == '1' && maps[s + 1][j] == '1'))
 		return (RETURN_SUCCESS);
 	return (RETURN_FAILURE);
 }
@@ -30,20 +28,15 @@ static int	control_2(char **maps, int s, int j)
 static int	control_1(char **maps, int s, int j)
 {
 	if ((maps[s][j + 1] == '1' && maps[s + 1][j] == '1') || \
-		(maps[s][j + 1] == '1' && maps[s][j - 1] == '1') || \
-		(j - 1 >= 0 && maps[s][j - 1] == '1' && maps[s + 1][j] == '1') || \
-		(s - 1 >= 0 && maps[s - 1] != NULL && maps[s - 1][j] == '1' && maps[s + 1][j] == '1'))
+		(j && maps[s][j + 1] == '1' && maps[s][j - 1] == '1') || \
+		(j && maps[s][j - 1] == '1' && maps[s + 1][j] == '1') || \
+		(s && maps[s - 1] != NULL && maps[s - 1][j] == '1' && maps[s + 1][j] == '1'))
 		return (RETURN_SUCCESS);
-	if ((maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && \
-		maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
-		(maps[s][j + 1] == '1' && maps[s][j - 1] == '0' && \
-		maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
-		(maps[s][j + 1] == '0' && maps[s][j - 1] == '1' && \
-		maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
-		(maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && \
-		maps[s + 1][j] == '1' && maps[s - 1][j] == '0') || \
-		(maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && \
-		maps[s + 1][j] == '0' && maps[s - 1][j] == '1'))
+	if ((j && s && maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
+		(j && s && maps[s][j + 1] == '1' && maps[s][j - 1] == '0' && maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
+		(j && s && maps[s][j + 1] == '0' && maps[s][j - 1] == '1' && maps[s + 1][j] == '0' && maps[s - 1][j] == '0') || \
+		(j && s && maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && maps[s + 1][j] == '1' && maps[s - 1][j] == '0') || \
+		(j && s && maps[s][j + 1] == '0' && maps[s][j - 1] == '0' && maps[s + 1][j] == '0' && maps[s - 1][j] == '1'))
 		return (RETURN_SUCCESS);
 	return (RETURN_FAILURE);
 }

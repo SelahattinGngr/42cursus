@@ -27,6 +27,8 @@ static void	parse_line(t_game *game, char *line)
 		get_background_color(line, game, FLOOR);
 	else if (!ft_strncmp(line, "C ", 2))
 		get_background_color(line, game, CEILING);
+	else if (game->list->head && ft_strlen(line) <= 1)
+		exit_err(".cub: Invalid Identifier Error\n", game);
 	else if (ft_strlen(line) <= 1)
 		return ;
 	else if (game->color_flag == 2 && game->dir_flag == 4)

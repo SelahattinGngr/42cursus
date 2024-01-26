@@ -12,12 +12,12 @@
 
 #include "../includes/init.h"
 
-//static int	exit_press(t_game *game)
-//{
-//	deinitialize(game);
-//	end_malloc(game->mc);
-//	exit(EXIT_SUCCESS);
-//}
+static int	exit_press(t_game *game)
+{
+	//deinitialize(game);
+	end_malloc(game->mc);
+	exit(EXIT_SUCCESS);
+}
 //
 //static void	draw(t_game *game)
 //{
@@ -81,6 +81,6 @@ int	main(int argc, char **argv)
 	//mlx_hook(game.win, KEY_EVENT_EXIT, 0, &exit_press, &game);
 	//mlx_loop_hook(game.mlx, &main_loop, &game);
 	//mlx_loop(game.mlx);
-	end_malloc(game.mc);
+	exit_press(&game);
 	return (0);
 }
