@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 
 t_node	*create_node(char *line, t_game *game)

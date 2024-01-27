@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/utils.h"
 #include "../includes/error.h"
-#include "stdio.h"
 
 static void	b_space(t_game *game, t_node *node, int i)
 {
@@ -91,7 +89,7 @@ void	get_map_game(t_game *game)
 			}
 			else if (game->map[i][j] == ' ')
 				if (check_blank(game, i, j))
-					exit_err("Invalid map\n", game);
+					exit_err("Invalid map Error\n", game);
 		}
 	}
 	placeholder(game);

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/error.h"
 #include "../includes/utils.h"
 #include "../get_next_line/get_next_line.h"
@@ -81,7 +80,7 @@ static int	c_f_control(t_game *game, char *file)
 		line = get_next_line(game, fd);
 	}
 	if (close(fd) < 0)
-		exit_err("Close Failed Error", game);
+		exit_err("Close Failed Error\n", game);
 	return (c != 0 || f != 0);
 }
 
@@ -93,11 +92,11 @@ void	control(t_game *game, char **argv)
 	if (direction_repeat_control(game, fd))
 	{
 		if (close(fd) < 0)
-			exit_err("Close Failed Error", game);
-		exit_err("direction repeat error.\n", game);
+			exit_err("Close Failed Error\n", game);
+		exit_err("direction repeat Error\n", game);
 	}
 	if (close(fd) < 0)
-		exit_err("Close Failed Error", game);
+		exit_err("Close Failed Error\n", game);
 	if (c_f_control(game, argv[1]))
-		exit_err("C/F error.\n", game);
+		exit_err("C/F Error\n", game);
 }

@@ -100,7 +100,6 @@ typedef struct s_game
 	int					key_d;
 	int					key_left;
 	int					key_right;
-	int					player;
 	int					color_flag;
 	int					dir_flag;
 	int					pos_flag;

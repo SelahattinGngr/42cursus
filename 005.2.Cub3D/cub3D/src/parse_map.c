@@ -63,7 +63,7 @@ void	parse_map(char *line, t_game *game)
 
 	size = ft_strlen(line);
 	if (check_map(game, line, size))
-		exit_err("Map: Invalid Map Value\n", game);
+		exit_err("Map: Invalid Map Value Error\n", game);
 	node = create_node(line, game);
 	add_node(game->list, node);
 	if (game->map_width < size)
@@ -82,7 +82,7 @@ void	parse_last(t_game *game, char *line)
 	while (i < size)
 	{
 		if (line[i] != '1' && line[i] != ' ')
-			exit_err("Map: Invalid Last Line\n", game);
+			exit_err("Map: Invalid Last Line Error\n", game);
 		i++;
 	}
 	node = create_node(line, game);

@@ -35,7 +35,7 @@ static int	parse_color(char *str, int *rgb, int *count, t_game *game)
 
 	split = ft_split(str, ',', game);
 	if (!split)
-		exit_err("Malloc Error", game);
+		exit_err("Malloc Error\n", game);
 	i = 0;
 	while (split[i])
 	{
@@ -86,16 +86,16 @@ void	get_background_color(char *line, t_game *game, int flag)
 	i = 1;
 	count = 0;
 	if (get_comma(line) != 2)
-		exit_err("Map: Invalid Color Value\n", game);
+		exit_err("Map: Invalid Color Value Error\n", game);
 	split = ft_split(line, ' ', game);
 	if (!split)
 		exit_err("Malloc Error", game);
 	if (ft_splitlen(split) < 2)
-		free_exit_err("Map: Invalid Color Value\n", game);
+		free_exit_err("Map: Invalid Color Value Error\n", game);
 	while (split[i])
 	{
 		if (parse_color(split[i], rgb, &count, game))
-			free_exit_err("Map: Invalid Color Value\n", game);
+			free_exit_err("Map: Invalid Color Value Error\n", game);
 		i++;
 	}
 	floor_ceiling(game, rgb, flag);

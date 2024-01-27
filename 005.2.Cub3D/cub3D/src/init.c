@@ -41,7 +41,6 @@ static void	init_default(t_game *game)
 {
 	game->map_width = 0;
 	game->map_height = 0;
-	game->player = 0;
 	game->key_a = 0;
 	game->key_w = 0;
 	game->key_s = 0;

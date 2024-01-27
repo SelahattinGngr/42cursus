@@ -14,6 +14,7 @@
 #include "../includes/error.h"
 #include "fcntl.h"
 #include "unistd.h"
+#include "stdio.h"
 
 static void	load_image(t_game *game, int *texture, char *path)
 {
@@ -57,7 +58,7 @@ static int	get_texture(char *line, t_game *game, int dir)
 
 	split = ft_split(line, ' ', game);
 	if (!split)
-		exit_err("Malloc Error", game);
+		exit_err("Malloc Error\n", game);
 	if (ft_splitlen(split) != 2 || check_extension(split[1], ".xpm"))
 	{
 		return (RETURN_FAILURE);
@@ -68,7 +69,7 @@ static int	get_texture(char *line, t_game *game, int dir)
 	load_texture(game, dir, split[1]);
 	game->dir_flag++;
 	if (close(fd) < 0)
-		exit_err("Close Failed Error", game);
+		exit_err("Close Failed Error\n", game);
 	return (RETURN_SUCCESS);
 }
 
@@ -77,22 +78,22 @@ int	get_textures(char *line, t_game *game)
 	if (!ft_strncmp(line, "NO ", 3))
 	{
 		if (get_texture(line, game, NO))
-			exit_err("Map: Invalid Texture Value\n", game);
+			exit_err("Map: Invalid Texture Value Error\n", game);
 	}
 	else if (!ft_strncmp(line, "EA ", 3))
 	{
 		if (get_texture(line, game, EA))
-			exit_err("Map: Invalid Texture Value\n", game);
+			exit_err("Map: Invalid Texture Value Error\n", game);
 	}
 	else if (!ft_strncmp(line, "SO ", 3))
 	{
 		if (get_texture(line, game, SO))
-			exit_err("Map: Invalid Texture Value\n", game);
+			exit_err("Map: Invalid Texture Value Error\n", game);
 	}
 	else if (!ft_strncmp(line, "WE ", 3))
 	{
 		if (get_texture(line, game, WE))
-			exit_err("Map: Invalid Texture Value\n", game);
+			exit_err("Map: Invalid Texture Value Error\n", game);
 	}
 	return (RETURN_SUCCESS);
 }

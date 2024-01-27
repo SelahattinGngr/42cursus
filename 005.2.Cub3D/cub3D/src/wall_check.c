@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
 #include "../includes/error.h"
 
 static int	control_2(char **maps, int s, int j)
@@ -23,6 +22,9 @@ static int	control_2(char **maps, int s, int j)
 		(j && maps[s][j - 1] == '1') || \
 		(s && maps[s][j + 1] == '1' && maps[s - 1][j] == '1') || \
 		(s && maps[s - 1][j] == '1' && maps[s + 1][j] == '1'))
+		return (RETURN_SUCCESS);
+	if ((s && maps[s - 1][j] == '0' && maps[s + 1][j] == '0') || \
+		(j && maps[s][j - 1] == '0' && maps[s][j + 1] == '0'))
 		return (RETURN_SUCCESS);
 	return (RETURN_FAILURE);
 }
@@ -76,7 +78,7 @@ void	wall_check(t_game *game)
 			{
 				if (maps[s + 1] != NULL)
 					if (other_lines(maps, s, j))
-						exit_err("Map is not closed2\n", game);
+						exit_err("Map is not closed2 Error\n", game);
 			}
 			j++;
 		}

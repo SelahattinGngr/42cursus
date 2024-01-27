@@ -47,7 +47,7 @@ static void	parse_cub(int fd, t_game *game)
 		if (!line)
 		{
 			if (close(fd) < 0)
-				exit_err("Close Failed Error", game);
+				exit_err("Close Failed Error\n", game);
 			exit_err("GNL Error\n", game);
 		}
 		parse_line(game, line);
@@ -56,7 +56,7 @@ static void	parse_cub(int fd, t_game *game)
 	if (game->dir_flag != 4 || game->color_flag != 2 || game->pos_flag != 1)
 	{
 		if (close(fd) < 0)
-			exit_err("Close Failed Error", game);
+			exit_err("Close Failed Error\n", game);
 		exit_err(".cub: Too Few gamermation\n", game);
 	}
 }
@@ -73,8 +73,8 @@ void	check_arg(int argc, char **argv, t_game *game)
 		exit_err("File Extension Error\n", game);
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		exit_err(".cub Path Error", game);
+		exit_err(".cub Path Error\n", game);
 	parse_cub(fd, game);
 	if (close(fd) < 0)
-		exit_err("Close Failed Error", game);
+		exit_err("Close Failed Error\n", game);
 }

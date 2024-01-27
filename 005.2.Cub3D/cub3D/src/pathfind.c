@@ -17,7 +17,7 @@ static int	recur_func(int **int_map, t_game *data, int x, int y)
 {
 	if (data->map[x][y] == ' ' || data->map[x][y] == '\n' \
 		|| data->map[x][y] == '\0')
-		exit_err("path find error.\n", data);
+		exit_err("path find Error\n", data);
 	if (data->map[x][y + 1] != '1' && int_map[x][y + 1] < 1)
 	{
 		int_map[x][y + 1] = int_map[x][y] + 1;
@@ -52,7 +52,9 @@ static void	position_check(int **int_map, t_game *data)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j] == '0' && data->map[i][j] != '\0' \
+			if ((data->map[i][j] == '0' || data->map[i][j] == 'W' || \
+				data->map[i][j] == 'S' || data->map[i][j] == 'N' || \
+				data->map[i][j] == 'E') && data->map[i][j] != '\0' \
 				&& int_map[i][j] < 1)
 				recur_func(int_map, data, i, j);
 			j++;
